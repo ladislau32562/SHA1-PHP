@@ -1,0 +1,34 @@
+<?php
+
+
+
+$str = "12345678"; # <input type="password" name="password">
+echo "<h1>SHA1</h1>".sha1($str);
+$str2 = sha1($str);
+echo "<br>";
+$array = array(sha1($str));
+
+echo "<br>";
+$arr1 = str_split($str2); #str_split — Convert a string to an array
+$arr2 = str_split($str,2); #str_split — Convert a string to an array
+
+echo "<br>";
+
+
+for($i=0; $i<sizeof($arr1); ++$i) { #typically rendered as a hexadecimal number, 40 digits long
+	if ($i <=19){
+	$a[]=$str2[$i];		
+	}
+	elseif ($i >19 && $i <=21)
+	$b[]=$str2[$i];
+	else
+	$c[]=$str2[$i];
+}
+
+$comma_separated = implode($a); #implode — Join array elements with a string
+$comma_separated2 = implode($c); #implode — Join array elements with a string
+
+
+echo "<br>";
+echo "<h1>SHA1-Ladislau Moreira: </h1>".$comma_separated.$arr2[0].$comma_separated2;
+?>
